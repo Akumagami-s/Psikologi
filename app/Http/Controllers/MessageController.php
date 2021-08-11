@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Message;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
     public function index(Request $request)
     {
+        
 
         return view('chat');
     }
@@ -23,7 +25,7 @@ class MessageController extends Controller
                 'is_read'=>TRUE
             ]);
         }
-        return view('privatechat',['chat'=>$chat,'id'=>$user_id]);
+        return view('privatechat',['chat'=>$chat,'id'=>$user_id,'receive'=>User::where('id',$user_id)->first()]);
 
     }
 
