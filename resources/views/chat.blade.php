@@ -18,232 +18,240 @@
 	<!--Coded With Love By Mutiullah Samim-->
 	<body>
 
+     
         <style>
-            	body,html{
-			height: 100%;
-			margin: 0;
-			background: #7F7FD5;
-	       background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-	        background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-		}
+			body,html{
+		height: 100%;
+		margin: 0;
+		background: #f1f7fd;
+		/* background: #7F7FD5; */
+	   /* background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); */
+		/* background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); */
+	}
 
-		.chat{
-			margin-top: auto;
-			margin-bottom: auto;
-		}
-		.card{
-			height: 90vh;
-			border-radius: 15px !important;
-			background-color: rgba(0,0,0,0.4) !important;
-		}
-		.contacts_body{
-			padding:  0.75rem 0 !important;
-			overflow-y: auto;
-			white-space: nowrap;
-		}
-		.msg_card_body{
-			overflow-y: auto;
-		}
-		.card-header{
-			border-radius: 15px 15px 0 0 !important;
-			border-bottom: 0 !important;
-		}
-	 .card-footer{
-		border-radius: 0 0 15px 15px !important;
-			border-top: 0 !important;
-	}
-		.container{
-			align-content: center;
-		}
-		.search{
-			border-radius: 15px 0 0 15px !important;
-			background-color: rgba(0,0,0,0.3) !important;
-			border:0 !important;
-			color:white !important;
-		}
-		.search:focus{
-		     box-shadow:none !important;
-           outline:0px !important;
-		}
-		.type_msg{
-			background-color: rgba(0,0,0,0.3) !important;
-			border:0 !important;
-			color:white !important;
-			height: 60px !important;
-			overflow-y: auto;
-		}
-			.type_msg:focus{
-		     box-shadow:none !important;
-           outline:0px !important;
-		}
-		.attach_btn{
-	border-radius: 15px 0 0 15px !important;
-	background-color: rgba(0,0,0,0.3) !important;
-			border:0 !important;
-			color: white !important;
-			cursor: pointer;
-		}
-		.send_btn{
-	border-radius: 0 15px 15px 0 !important;
-	background-color: rgba(0,0,0,0.3) !important;
-			border:0 !important;
-			color: white !important;
-			cursor: pointer;
-		}
-		.search_btn{
-			border-radius: 0 15px 15px 0 !important;
-			background-color: rgba(0,0,0,0.3) !important;
-			border:0 !important;
-			color: white !important;
-			cursor: pointer;
-		}
-		.contacts{
-			list-style: none;
-			padding: 0;
-		}
-		.contacts li{
-			width: 100% !important;
-			padding: 5px 10px;
-			margin-bottom: 15px !important;
-		}
-	.active{
-			background-color: rgba(0,0,0,0.3);
-	}
-		.user_img{
-			height: 70px;
-			width: 70px;
-			border:1.5px solid #f5f6fa;
-		
-		}
-		.user_img_msg{
-			height: 40px;
-			width: 40px;
-			border:1.5px solid #f5f6fa;
-		
-		}
-	.img_cont{
-			position: relative;
-			height: 70px;
-			width: 70px;
-	}
-	.img_cont_msg{
-			height: 40px;
-			width: 40px;
-	}
-	.online_icon{
-		position: absolute;
-		height: 15px;
-		width:15px;
-		background-color: #4cd137;
-		border-radius: 50%;
-		bottom: 0.2em;
-		right: 0.4em;
-		border:1.5px solid white;
-	}
-	.offline{
-		background-color: #c23616 !important;
-	}
-	.user_info{
+	.chat{
 		margin-top: auto;
 		margin-bottom: auto;
-		margin-left: 15px;
 	}
-	.user_info span{
-		font-size: 20px;
-		color: white;
+	.card{
+		height: 90vh;
+		border-radius: 15px !important;
+		background: #fff;
+		box-shadow:0px 2px 15px rgba(0, 0, 0, 0.1);
+		/* background-color: rgba(0,0,0,0.4) !important; */
 	}
-	.user_info p{
-	font-size: 10px;
-	color: rgba(255,255,255,0.6);
+	.contacts_body{
+		padding:  0.75rem 0 !important;
+		overflow-y: auto;
+		white-space: nowrap;
 	}
-	.video_cam{
-		margin-left: 50px;
-		margin-top: 5px;
+	.msg_card_body{
+		overflow-y: auto;
 	}
-	.video_cam span{
-		color: white;
-		font-size: 20px;
+	.card-header{
+		border-radius: 15px 15px 0 0 !important;
+		border-bottom: 0 !important;
+	}
+ .card-footer{
+	border-radius: 0 0 15px 15px !important;
+		border-top: 0 !important;
+}
+	.container{
+		align-content: center;
+	}
+	.search{
+		border-radius: 15px 0 0 15px !important;
+		background-color: lightcoral !important;
+		border:0 !important;
+		color:white !important;
+	}
+	.search:focus{
+		 box-shadow:none !important;
+	   outline:0px !important;
+	}
+	.type_msg{
+		background-color: lightcoral !important;
+		border:0 !important;
+		color:white !important;
+		height: 60px !important;
+		overflow-y: auto;
+	}
+		.type_msg:focus{
+		 box-shadow:none !important;
+	   outline:0px !important;
+	}
+	.attach_btn{
+border-radius: 15px 0 0 15px !important;
+background-color: lightcoral !important;
+		border:0 !important;
+		color: white !important;
 		cursor: pointer;
-		margin-right: 20px;
 	}
-	.msg_cotainer{
-		margin-top: auto;
-		margin-bottom: auto;
-		margin-left: 10px;
-		border-radius: 25px;
-		background-color: #82ccdd;
-		padding: 10px;
-		position: relative;
-	}
-	.msg_cotainer_send{
-		margin-top: auto;
-		margin-bottom: auto;
-		margin-right: 10px;
-		border-radius: 25px;
-		background-color: #78e08f;
-		padding: 10px;
-		position: relative;
-	}
-	.msg_time{
-		position: absolute;
-		left: 0;
-		bottom: -15px;
-		color: rgba(255,255,255,0.5);
-		font-size: 10px;
-	}
-	.msg_time_send{
-		position: absolute;
-		right:0;
-		bottom: -15px;
-		color: rgba(255,255,255,0.5);
-		font-size: 10px;
-	}
-	.msg_head{
-		position: relative;
-	}
-	#action_menu_btn{
-		position: absolute;
-		right: 10px;
-		top: 10px;
-		color: white;
+	.send_btn{
+border-radius: 0 15px 15px 0 !important;
+background-color: lightcoral !important;
+		border:0 !important;
+		color: black !important;
 		cursor: pointer;
-		font-size: 20px;
 	}
-	.action_menu{
-		z-index: 1;
-		position: absolute;
-		padding: 15px 0;
-		background-color: rgba(0,0,0,0.5);
-		color: white;
-		border-radius: 15px;
-		top: 30px;
-		right: 15px;
-		display: none;
+	.search_btn{
+		border-radius: 0 15px 15px 0 !important;
+		background-color: lightcoral !important;
+		border:0 !important;
+		color: black !important;
+		cursor: pointer;
 	}
-	.action_menu ul{
+	.contacts{
 		list-style: none;
 		padding: 0;
-	margin: 0;
 	}
-	.action_menu ul li{
-		width: 100%;
-		padding: 10px 15px;
-		margin-bottom: 5px;
-	}
-	.action_menu ul li i{
-		padding-right: 10px;
-	
-	}
-	.action_menu ul li:hover{
-		cursor: pointer;
-		background-color: rgba(0,0,0,0.2);
-	}
-	@media(max-width: 576px){
-	.contacts_card{
+	.contacts li{
+		width: 100% !important;
+		padding: 5px 10px;
 		margin-bottom: 15px !important;
 	}
+.active{
+		background-color: lightcoral;
+}
+	.user_img{
+		height: 70px;
+		width: 70px;
+		border:1.5px solid #f5f6fa;
+	
 	}
-        </style>
+	.user_img_msg{
+		height: 40px;
+		width: 40px;
+		border:1.5px solid #f5f6fa;
+	
+	}
+.img_cont{
+		position: relative;
+		height: 70px;
+		width: 70px;
+}
+.img_cont_msg{
+		height: 40px;
+		width: 40px;
+}
+.online_icon{
+	position: absolute;
+	height: 15px;
+	width:15px;
+	background-color: #4cd137;
+	border-radius: 50%;
+	bottom: 0.2em;
+	right: 0.4em;
+	border:1.5px solid white;
+}
+.offline{
+	background-color: #c23616 !important;
+}
+.user_info{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 15px;
+}
+.user_info span{
+	font-size: 20px;
+	color: black;
+}
+.user_info p{
+font-size: 10px;
+color: black;
+}
+.video_cam{
+	margin-left: 50px;
+	margin-top: 5px;
+}
+.video_cam span{
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+	margin-right: 20px;
+}
+.msg_cotainer{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-left: 10px;
+	border-radius: 25px;
+	background-color: #82ccdd;
+	padding: 10px;
+	min-width: 70px;
+	position: relative;
+}
+.msg_cotainer_send{
+	margin-top: auto;
+	margin-bottom: auto;
+	margin-right: 10px;
+	border-radius: 25px;
+	min-width: 70px;
+	background-color: #78e08f;
+	padding: 10px;
+	position: relative;
+}
+.msg_time{
+	position: absolute;
+	left: 0;
+	bottom: -15px;
+	color: rgb(26, 24, 24);
+	font-size: 10px;
+}
+.msg_time_send{
+	position: absolute;
+	right:0;
+	bottom: -15px;
+	color: rgb(26, 24, 24);
+	font-size: 10px;
+}
+.msg_head{
+	position: relative;
+}
+#action_menu_btn{
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	color: black;
+	cursor: pointer;
+	font-size: 20px;
+}
+.action_menu{
+	z-index: 1;
+	position: absolute;
+	padding: 15px 0;
+	background-color: rgba(0,0,0,0.5);
+	color: black;
+	border-radius: 15px;
+	top: 30px;
+	right: 15px;
+	display: none;
+}
+.action_menu ul{
+	list-style: none;
+	padding: 0;
+margin: 0;
+}
+.action_menu ul li{
+	width: 100%;
+	padding: 10px 15px;
+	margin-bottom: 5px;
+}
+.action_menu ul li i{
+	padding-right: 10px;
+
+}
+.action_menu ul li:hover{
+	cursor: pointer;
+	background-color: rgba(0,0,0,0.2);
+}
+@media(max-width: 576px){
+.contacts_card{
+	margin-bottom: 15px !important;
+}
+}
+	</style>
+
+		
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">
 				<div class="col-md-4 col-xl-3 chat"><div class="card mb-sm-3 mb-md-0 contacts_card">
@@ -264,7 +272,7 @@
                                 <div class="d-flex bd-highlight">
                                     
                                     <div class="user_info">
-                                        <span><a href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
+                                        <span><a style="color: blue;text-decoration: none"href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
                                         <p>{{$item->name}} is online</p>
                                     </div>
                                 </div>
