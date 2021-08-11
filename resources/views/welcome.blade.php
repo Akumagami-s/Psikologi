@@ -2,6 +2,7 @@
 
 
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{ url('css/chat.css') }}">
     
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex align-items-center">
@@ -839,4 +840,13 @@
     </div>
   </footer><!-- End Footer -->
 
+
+
+  <script>
+    var botmanWidget = {
+        aboutText: 'Write Something',
+        introMessage: "✋ Hi! I kiga From Akumagami"
+    };
+</script>
+<script src='{{ url('js/botman.js') }}'></script>
 @endsection
