@@ -61,7 +61,7 @@
 	}
 	.search{
 		border-radius: 15px 0 0 15px !important;
-		background-color: lightcoral !important;
+		background-color: #1977cc !important;
 		border:0 !important;
 		color:white !important;
 	}
@@ -70,7 +70,7 @@
 	   outline:0px !important;
 	}
 	.type_msg{
-		background-color: lightcoral !important;
+		background-color: #1977cc !important;
 		border:0 !important;
 		color:white !important;
 		height: 60px !important;
@@ -82,23 +82,23 @@
 	}
 	.attach_btn{
 border-radius: 15px 0 0 15px !important;
-background-color: lightcoral !important;
+background-color: #1977cc !important;
 		border:0 !important;
 		color: white !important;
 		cursor: pointer;
 	}
 	.send_btn{
 border-radius: 0 15px 15px 0 !important;
-background-color: lightcoral !important;
+background-color: #1977cc !important;
 		border:0 !important;
-		color: black !important;
+		color: white !important;
 		cursor: pointer;
 	}
 	.search_btn{
 		border-radius: 0 15px 15px 0 !important;
-		background-color: lightcoral !important;
+		background-color: #1977cc !important;
 		border:0 !important;
-		color: black !important;
+		color: white !important;
 		cursor: pointer;
 	}
 	.contacts{
@@ -111,7 +111,7 @@ background-color: lightcoral !important;
 		margin-bottom: 15px !important;
 	}
 .active{
-		background-color: lightcoral;
+		background-color: #1977cc;
 }
 	.user_img{
 		height: 70px;
@@ -272,8 +272,8 @@ margin: 0;
                                 <div class="d-flex bd-highlight">
                                     
                                     <div class="user_info">
-                                        <span><a style="color: blue;text-decoration: none"href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
-                                        <p>{{$item->name}} is online</p>
+                                        <span><a style="color: white;text-decoration: none" href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
+                                        <p style="color: white;text-decoration: none">{{$item->name}} is online</p>
                                     </div>
                                 </div>
                             </li>

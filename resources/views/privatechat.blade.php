@@ -61,7 +61,7 @@
 	}
 	.search{
 		border-radius: 15px 0 0 15px !important;
-		background-color: lightcoral !important;
+		background-color: #1977cc !important;
 		border:0 !important;
 		color:white !important;
 	}
@@ -70,7 +70,7 @@
 	   outline:0px !important;
 	}
 	.type_msg{
-		background-color: lightcoral !important;
+		background-color: #1977cc !important;
 		border:0 !important;
 		color:white !important;
 		height: 60px !important;
@@ -82,23 +82,23 @@
 	}
 	.attach_btn{
 border-radius: 15px 0 0 15px !important;
-background-color: lightcoral !important;
+background-color: #1977cc !important;
 		border:0 !important;
 		color: white !important;
 		cursor: pointer;
 	}
 	.send_btn{
 border-radius: 0 15px 15px 0 !important;
-background-color: lightcoral !important;
+background-color: #1977cc !important;
 		border:0 !important;
-		color: black !important;
+		color: white !important;
 		cursor: pointer;
 	}
 	.search_btn{
 		border-radius: 0 15px 15px 0 !important;
-		background-color: lightcoral !important;
+		background-color: #1977cc !important;
 		border:0 !important;
-		color: black !important;
+		color: white !important;
 		cursor: pointer;
 	}
 	.contacts{
@@ -111,7 +111,7 @@ background-color: lightcoral !important;
 		margin-bottom: 15px !important;
 	}
 .active{
-		background-color: lightcoral;
+		background-color: #1977cc;
 }
 	.user_img{
 		height: 70px;
@@ -154,7 +154,7 @@ background-color: lightcoral !important;
 }
 .user_info span{
 	font-size: 20px;
-	color: black;
+	color: rgb(253, 229, 229)53, 229, 229);
 }
 .user_info p{
 font-size: 10px;
@@ -180,6 +180,21 @@ color: black;
 	min-width: 70px;
 	position: relative;
 }
+
+
+::placeholder { 
+								color: white;
+								opacity: 1; 
+							  }
+							  
+							  :-ms-input-placeholder {
+								color: white;
+							  }
+							  
+							  ::-ms-input-placeholder {
+								color: white;
+							  }
+
 .msg_cotainer_send{
 	margin-top: auto;
 	margin-bottom: auto;
@@ -249,13 +264,14 @@ margin: 0;
 	margin-bottom: 15px !important;
 }
 }
+
 	</style>
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">
 				<div class="col-md-4 col-xl-3 chat"><div class="card mb-sm-3 mb-md-0 contacts_card">
 					<div class="card-header">
 						<div class="input-group">
-							<input type="text" placeholder="Search..." name="" class="form-control search">
+							<input type="text" placeholder="Search..." name="" style="" class="form-control search">
 							<div class="input-group-prepend">
 								<span class="input-group-text search_btn"><i class="fas fa-search"></i></span>
 							</div>
@@ -270,8 +286,8 @@ margin: 0;
                              <div class="d-flex bd-highlight">
                                  
                                  <div class="user_info">
-                                     <span><a href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
-                                     <p>{{$item->name}} is online</p>
+                                     <span><a style="color: white;text-decoration: none" href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
+                                     <p style="color: white;text-decoration: none">{{$item->name}} is online</p>
                                  </div>
                              </div>
                          </li>
