@@ -28,8 +28,13 @@ require __DIR__.'/auth.php';
 
 Route::match(['get', 'post'], '/botman', [BotManController::class,'handle']);
 
-Route::get('chat/', [MessageController::class,'index'])->name('chat');
 
-Route::get('chat/{user_id}', [MessageController::class,'privatechat'])->name('privatechat');
-Route::post('send/', [MessageController::class,'send'])->name('send');
-Route::post('getMsg/', [MessageController::class,'getMsg'])->name('getMsg');
+
+Route::group(['middleware'=>'auth'],function(){
+
+    Route::get('chat/', [MessageController::class,'index'])->name('chat');
+    Route::get('chat/{user_id}', [MessageController::class,'privatechat'])->name('privatechat');
+    Route::post('send/', [MessageController::class,'send'])->name('send');
+    Route::post('getMsg/', [MessageController::class,'getMsg'])->name('getMsg');
+    
+});

@@ -249,6 +249,14 @@ margin: 0;
 	margin-bottom: 15px !important;
 }
 }
+.search::placeholder {
+        color: white;
+        opacity: 1;
+      }
+
+	  .type_msg::placeholder{
+		  color: white;
+	  }
 	</style>
 
 		

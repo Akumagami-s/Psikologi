@@ -265,6 +265,15 @@ margin: 0;
 }
 }
 
+.search::placeholder {
+        color: white;
+        opacity: 1;
+      }
+
+	  .type_msg::placeholder{
+		  color: white;
+	  }
+
 	</style>
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">
