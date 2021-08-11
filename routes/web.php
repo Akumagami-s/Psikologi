@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\BotManController;
+
+use App\Http\Controllers\MessageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,3 +27,9 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 Route::match(['get', 'post'], '/botman', [BotManController::class,'handle']);
+
+Route::get('chat/', [MessageController::class,'index'])->name('chat');
+
+Route::get('chat/{user_id}', [MessageController::class,'privatechat'])->name('privatechat');
+Route::post('send/', [MessageController::class,'send'])->name('send');
+Route::post('getMsg/', [MessageController::class,'getMsg'])->name('getMsg');
