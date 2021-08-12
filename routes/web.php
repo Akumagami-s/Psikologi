@@ -34,12 +34,12 @@ Route::get('/botmans', function () {
     return view('botman');
 })->name('botman');
 
-Route::get('test', [MessageController::class,'test'])->name('test');
+Route::get('test', [MeetController::class,'loginMeet'])->name('test');
 
-Route::get('coba', [MeetController::class,'loginMeet'])->name('coba');
+Route::get('prepareMeet', [MeetController::class,'prepareMeet'])->name('prepareMeet');
 
 
-Route::get('test2', [MessageController::class,'test2'])->name('test2');
+// Route::get('test2', [MessageController::class,'test2'])->name('test2');
 Route::group(['middleware'=>'auth'],function(){
     Route::get('profile/', [UserController::class,'profile'])->name('profile');
     Route::post('create_profile/', [UserController::class,'create_profile'])->name('create_profile');
