@@ -275,20 +275,40 @@ margin: 0;
 					<div class="card-body contacts_body">
 						<ul class="contacts">
 						
-                                @foreach (App\Models\User::where('role',1)->get() as $item)
-                               @if ($item->id != Auth::id())
-                               <li class="active">
-                                <div class="d-flex bd-highlight">
-                                    
-                                    <div class="user_info">
-                                        <span><a style="color: white;text-decoration: none" href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
-                                        <p style="color: white;text-decoration: none">{{$item->name}} is online</p>
-                                    </div>
-                                </div>
-                            </li>
-                               @endif
-                                
-                                @endforeach
+								@if (Auth::user()->role == 0)
+								@foreach (App\Models\User::where('role',1)->get() as $item)
+								@if ($item->id != Auth::id())
+								<li class="active">
+								 <div class="d-flex bd-highlight">
+									 
+									 <div class="user_info">
+										 <span><a style="color: white;text-decoration: none" href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
+										 <p style="color: white;text-decoration: none">{{$item->name}} is online</p>
+									 </div>
+								 </div>
+							 </li>
+								@endif
+								 
+								 @endforeach
+								@else
+								@foreach (App\Models\User::where('role',0)->get() as $item)
+								@if ($item->id != Auth::id())
+								<li class="active">
+								 <div class="d-flex bd-highlight">
+									 
+									 <div class="user_info">
+										 <span><a style="color: white;text-decoration: none" href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
+										 <p style="color: white;text-decoration: none">{{$item->name}} is online</p>
+									 </div>
+								 </div>
+							 </li>
+								@endif
+								 
+								 @endforeach
+								@endif
+
+
+                              
 
 						</ul>
 					</div>

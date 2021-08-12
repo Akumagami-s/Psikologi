@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use GuzzleHttp\Client;
+use App\Models\Message;
+use Illuminate\Support\Facades\Auth;
 class MeetController extends Controller
 {
 
@@ -26,7 +28,6 @@ class MeetController extends Controller
                 "accessTokenExpired"=> 120
             ]
         ]);
-    
         $login = $res->getBody()->getContents();
         $login = json_decode($login,true);
         $at = $login['data']['accessToken'];
@@ -56,6 +57,15 @@ class MeetController extends Controller
         $result= $res2->getBody()->getContents();
         $result = json_decode($result,true);
         $link = $result['data']['detailMeetingData']['meetingLink'];
+        $linkjoin = $result['data']['meetingData']['joinLink'];
+        Message::create([
+            'from'=>Auth::id(),
+            'message'=>"i invite you for meeting !   "."<a target='_blank' href='https://".$linkjoin."'>Join </a>",
+            'to'=>$request->user_id,
+            'is_read'=>FALSE
+        ]);
+
+
         return redirect($link);
 
         

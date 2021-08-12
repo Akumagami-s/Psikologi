@@ -11,28 +11,41 @@ class MessageController extends Controller
 {
     public function index(Request $request)
     {
-        
-
         return view('chat');
     }
 
     public function privateChat(Request $request,$user_id)
     {
+        if (is_null(User::where('id',$user_id)->first())) {
+            return redirect()->back();
+        } else {
+            if ($user_id == Auth::id()) {
+                return redirect()->back();
+            }
+            else if (Auth::user()->role == User::where('id',$user_id)->first()->role){
+                return redirect()->back();
+            }
+            else {
+                $chat = Message::where(['from'=>Auth::id(),'to'=>$user_id])->orWhere(['from'=>$user_id,'to'=>Auth::id()])->get();
+    
+                foreach ($chat as $key => $value) {
+                    Message::where(['from'=>Auth::id(),'to'=>$user_id])->orWhere(['from'=>$user_id,'to'=>Auth::id()])->update([
+                        'is_read'=>TRUE
+                    ]);
+                }
+                return view('privatechat',['chat'=>$chat,'id'=>$user_id,'receive'=>User::where('id',$user_id)->first()]);
         
-        $chat = Message::where(['from'=>Auth::id(),'to'=>$user_id])->orWhere(['from'=>$user_id,'to'=>Auth::id()])->get();
-
-        foreach ($chat as $key => $value) {
-            Message::where(['from'=>Auth::id(),'to'=>$user_id])->orWhere(['from'=>$user_id,'to'=>Auth::id()])->update([
-                'is_read'=>TRUE
-            ]);
+            }
         }
-        return view('privatechat',['chat'=>$chat,'id'=>$user_id,'receive'=>User::where('id',$user_id)->first()]);
-
+        
+      
     }
 
     public function getMsg(Request $request)
     {
         $new = Message::where(['from'=>$request->user_id,'to'=>Auth::id(),'is_read'=>FALSE])->get();
+        
+        
         foreach ($new as $key => $value) {
             Message::where(['from'=>Auth::id(),'to'=>$request->user_id])->orWhere(['from'=>$request->user_id,'to'=>Auth::id()])->update([
                 'is_read'=>TRUE

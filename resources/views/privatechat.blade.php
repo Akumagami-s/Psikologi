@@ -288,7 +288,10 @@ margin: 0;
 					</div>
 					<div class="card-body contacts_body">
 						<ul class="contacts">
-						
+
+
+							@if (Auth::user()->role == 0)
+								
                             @foreach (App\Models\User::where('role',1)->get() as $item)
                             @if ($item->id != Auth::id())
                             <li class="active">
@@ -303,6 +306,25 @@ margin: 0;
                             @endif
                              
                              @endforeach
+							@else
+								
+
+                            @foreach (App\Models\User::where('role',0)->get() as $item)
+                            @if ($item->id != Auth::id())
+                            <li class="active">
+                             <div class="d-flex bd-highlight">
+                                 
+                                 <div class="user_info">
+                                     <span><a style="color: white;text-decoration: none" href="{{ route('privatechat', ['user_id'=>$item->id]) }}">{{$item->name}}</a></span>
+                                     <p style="color: white;text-decoration: none">{{$item->name}} is online</p>
+                                 </div>
+                             </div>
+                         </li>
+                            @endif
+                             
+                             @endforeach
+							@endif
+						
 						</ul>
 					</div>
 					<div class="card-footer"></div>
@@ -317,8 +339,8 @@ margin: 0;
 									
 								</div>
 								<div class="video_cam">
-									<span><i class="fas fa-video"></i></span>
-									<span><i class="fas fa-phone"></i></span>
+									<span data-toggle="modal" data-target="#exampleModal" style="color: black"><i class="fas fa-video"></i></span>
+								
 								</div>
 							</div>
 							<span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
@@ -394,6 +416,32 @@ margin: 0;
 				</div>
 			</div>
 		</div>
+
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<form action="{{ route('createMeet') }}" method="post">
+				@csrf
+				
+				<div class="modal-body">
+
+					<input type="hidden" name="user_id" value="{{$id}}">
+					<input type="text" name="title" placeholder="Title For Your meeting" class="form-control">
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				  <button type="submit" class="btn btn-outline-primary">Create !</button>
+				</div>
+			</form>
+			  </div>
+			</div>
+		  </div>
         <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
         <script>
             	$(document).ready(function(){
