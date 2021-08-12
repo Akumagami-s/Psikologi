@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Message;
 use App\Models\User;
+use App\Events\MyEvent;
 use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
@@ -50,6 +51,24 @@ class MessageController extends Controller
         ]);
 
         return response()->json(['message'=>'success'], 200);
+
+    }
+
+    public function test(Request $request)
+    {
+        
+
+// event(new MyEvent('hello world'));
+
+return view('test');
+
+
+    }
+
+    public function test2()
+    {
+        echo "ada";
+        event(new MyEvent('hello world'));
 
     }
 }

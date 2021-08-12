@@ -18,8 +18,12 @@ class BotManController extends Controller
    
             if ($message == 'hi') {
                 $this->askName($botman);
-            }else{
-                $botman->reply("write 'hi' for testing...");
+            }
+            else if($message == '!help'){
+                $botman->reply("At Kiga Ater you can use several services including: </br> <ul><li>Chat Psikolog</li><li>See blog for healing</li><li>MDC (Meet With Doc)</li><li></li></ul>");
+            }
+            else{
+                $botman->reply("write 'hi' for testing... ");
             }
    
         });

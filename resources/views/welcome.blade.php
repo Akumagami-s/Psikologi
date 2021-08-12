@@ -845,7 +845,8 @@
   <script>
     var botmanWidget = {
         aboutText: 'Write Something',
-        introMessage: "✋ Hi! I kiga From Akumagami"
+        introMessage: "✋ Hi! I kiga From Akumagami , send !help to use me"
+        
     };
 </script>
 <script src='{{ url('js/botman.js') }}'></script>

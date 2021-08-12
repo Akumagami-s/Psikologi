@@ -297,7 +297,11 @@ margin: 0;
 					<div class="card">
 						
 						<div class="card-body msg_card_body">
-					
+							<div class="d-flex justify-content-center align-items-center w-100 h-100">
+							<h1 class="text-black-50">
+									Click Psikolog name !
+								</h1>
+							</div>	
 						</div>
 						<div class="card-footer">
 							<div class="input-group">
