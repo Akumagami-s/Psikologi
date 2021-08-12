@@ -289,7 +289,7 @@ margin: 0;
 					<div class="card-body contacts_body">
 						<ul class="contacts">
 						
-                            @foreach (App\Models\User::all() as $item)
+                            @foreach (App\Models\User::where('role',1)->get() as $item)
                             @if ($item->id != Auth::id())
                             <li class="active">
                              <div class="d-flex bd-highlight">

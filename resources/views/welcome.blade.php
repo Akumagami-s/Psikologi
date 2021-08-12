@@ -8,7 +8,7 @@
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <h1>Welcome to Kiga-Ater</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h2>we are a platform that connects psychologists and you</h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
@@ -845,6 +845,7 @@
   <script>
     var botmanWidget = {
         aboutText: 'Write Something',
+        // frameEndpoint: '{{ route("botman")  }}',
         introMessage: "✋ Hi! I kiga From Akumagami , send !help to use me"
         
     };

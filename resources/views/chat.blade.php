@@ -262,8 +262,9 @@ margin: 0;
 		
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">
-				<div class="col-md-4 col-xl-3 chat"><div class="card mb-sm-3 mb-md-0 contacts_card">
-					<div class="card-header">
+				<div class="col-md-4 col-xl-3 chat">
+					<div class="card mb-sm-3 mb-md-0 contacts_card">
+					<div class="card-header ">
 						<div class="input-group">
 							<input type="text" placeholder="Search..." name="" class="form-control search">
 							<div class="input-group-prepend">
@@ -274,7 +275,7 @@ margin: 0;
 					<div class="card-body contacts_body">
 						<ul class="contacts">
 						
-                                @foreach (App\Models\User::all() as $item)
+                                @foreach (App\Models\User::where('role',1)->get() as $item)
                                @if ($item->id != Auth::id())
                                <li class="active">
                                 <div class="d-flex bd-highlight">
