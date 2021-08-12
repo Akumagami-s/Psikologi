@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BotManController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\MeetController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,6 +35,9 @@ Route::get('/botmans', function () {
 })->name('botman');
 
 Route::get('test', [MessageController::class,'test'])->name('test');
+
+Route::get('coba', [MeetController::class,'loginMeet'])->name('coba');
+
 
 Route::get('test2', [MessageController::class,'test2'])->name('test2');
 Route::group(['middleware'=>'auth'],function(){
