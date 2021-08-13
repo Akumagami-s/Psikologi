@@ -60,7 +60,7 @@ class MeetController extends Controller
         $linkjoin = $result['data']['meetingData']['joinLink'];
         Message::create([
             'from'=>Auth::id(),
-            'message'=>"i invite you for meeting !   "."<a target='_blank' href='https://".$linkjoin."'>Join </a>",
+            'message'=>"i invite you for meeting !   ".'<a target="_blank" href="https://'.$linkjoin.'">Join </a>',
             'to'=>$request->user_id,
             'is_read'=>FALSE
         ]);

@@ -143,7 +143,7 @@
           <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <form method="POST" enctype="multipart/form-data" id="send">
+        <form action="{{ route('create_profile') }}" method="POST" enctype="multipart/form-data" id="send">
             @csrf
             <div class="modal-body">
                 <div class="input-group mb-3">
@@ -210,7 +210,7 @@ $.ajaxSetup({
 
 $.ajax({
   url: '{{ route("create_profile") }}',
-  type: 'POST',
+  type: "'POST'",
   data: new FormData(this),
   dataType: 'JSON',
   contentType: false,

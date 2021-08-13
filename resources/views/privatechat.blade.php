@@ -362,7 +362,7 @@ margin: 0;
                                 <div class="d-flex justify-content-start mb-4">
                                    
                                     <div class="msg_cotainer">
-                                       {{$item->message}}
+                                        <?= $item->message ?>
                                         <span class="msg_time">8:40 AM, Today</span>
                                     </div>
                                 </div>
@@ -371,7 +371,7 @@ margin: 0;
 
                                 <div class="d-flex justify-content-end mb-4">
                                     <div class="msg_cotainer_send">
-                                        {{$item->message}}
+                                        <?= $item->message ?>
                                         <span class="msg_time_send">8:55 AM, Today</span>
                                     </div>
                                   

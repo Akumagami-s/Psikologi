@@ -27,16 +27,45 @@ class UserController extends Controller
     public function create_profile(Request $request)
     {
 
-        ProfilePatient::create([
-            'user_id'=>Auth::id(),
-            'fullname'=>$request->fullname,
-            'address'=>$request->address,
-            'age'=>$request->age,
-            'phone'=>$request->phone,
-            'status'=>$request->status,
-            'thumb'=>$request->thumb,
+
+        if (is_null($request->thumb)) {
+            ProfilePatient::create([
+                'user_id'=>Auth::id(),
+                'fullname'=>$request->fullname,
+                'address'=>$request->address,
+                'age'=>$request->age,
+                'phone'=>$request->phone,
+                'status'=>$request->status,
+                
+                
+            ]);
+    
+    
             
-            
-        ]);
+
+        }else {
+
+
+      
+
+        $thumb = $request->file('thumb');
+            $thumbname = time().'-'.$thumb->getClientOriginalName();
+            $thumb->move(public_path().'/thumb'.'/',$thumbname);
+
+            ProfilePatient::create([
+                'user_id'=>Auth::id(),
+                'fullname'=>$request->fullname,
+                'address'=>$request->address,
+                'age'=>$request->age,
+                'phone'=>$request->phone,
+                'status'=>$request->status,
+                'thumb'=>$thumbname,
+                
+                
+            ]);
+        }
+
+        return redirect()->back();
+
     }
 }

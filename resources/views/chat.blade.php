@@ -276,6 +276,9 @@ margin: 0;
 						<ul class="contacts">
 						
 								@if (Auth::user()->role == 0)
+								<@php
+								echo 'ada';
+							@endphp>
 								@foreach (App\Models\User::where('role',1)->get() as $item)
 								@if ($item->id != Auth::id())
 								<li class="active">
@@ -291,6 +294,7 @@ margin: 0;
 								 
 								 @endforeach
 								@else
+							
 								@foreach (App\Models\User::where('role',0)->get() as $item)
 								@if ($item->id != Auth::id())
 								<li class="active">
