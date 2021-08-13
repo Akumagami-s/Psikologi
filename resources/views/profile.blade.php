@@ -102,8 +102,14 @@
         </div>
         <div class="col-md-4 col-xl-3">
                 <div class="card shadow p-3">
-                    <img class="img-fluid w-100" style="border-radius: 10px" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmyanimeshelf.com%2Fupload%2Fdynamic%2F2013-12%2F08%2F372.jpg&f=1&nofb=1" alt="">
+                  
+                  @if (is_null($profile->thumb))
+                        <img class="img-fluid w-100" style="border-radius: 10px" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fmyanimeshelf.com%2Fupload%2Fdynamic%2F2013-12%2F08%2F372.jpg&f=1&nofb=1" alt="">
                
+                  @else
+                  <img class="img-fluid w-100" style="border-radius: 10px" src="{{ url('thumb/'.$profile->thumb) }}" alt="">
+               
+                  @endif
 
                     <div class="card-body">
 

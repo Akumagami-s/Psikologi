@@ -18,8 +18,8 @@ use App\Http\Controllers\MeetController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('welcome',['home'=>TRUE]);
+})->name("home");
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -39,12 +39,11 @@ Route::get('prepareMeet', [MeetController::class,'prepareMeet'])->name('prepareM
 Route::post('createMeet', [MeetController::class,'loginMeet'])->name('createMeet');
 
 
-Route::post('create_profile/', [UserController::class,'create_profile'])->name('create_profile');
 
 
 Route::group(['middleware'=>'auth'],function(){
     Route::get('profile/', [UserController::class,'profile'])->name('profile');
-
+    Route::post('create_profile/', [UserController::class,'create_profile'])->name('create_profile');
     Route::get('chat/', [MessageController::class,'index'])->name('chat');
     Route::get('chat/{user_id}', [MessageController::class,'privatechat'])->name('privatechat');
     Route::post('send/', [MessageController::class,'send'])->name('send');
