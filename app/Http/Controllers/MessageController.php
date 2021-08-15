@@ -26,36 +26,26 @@ class MessageController extends Controller
                 return redirect()->back();
             }
             else {
-
-                
                 $chat = [];
                 
                 foreach (Message::all() as $key => $value) {
                     if ($value->from == Auth::id() && $value->to == $user_id) {
                         $chat[] = $value;
-
                     }
                     elseif ($value->from == $user_id && $value->to == Auth::id()) {
                         $chat[] = $value;
                     }
-
                 }
                 // dd($chat);
-
-               
                 foreach ($chat as $key => $value) {
                     Message::where('id',$value->id)->update([
                         'is_read'=>TRUE
                     ]);
                 }
                 return view('privatechat',['chat'=>$chat,'id'=>$user_id,'receive'=>User::where('id',$user_id)->first()]);
-        
             }
         }
-        
-      
     }
-
     public function getMsg(Request $request)
     {
         $new = Message::where(['from'=>$request->user_id,'to'=>Auth::id(),'is_read'=>FALSE])->get();
