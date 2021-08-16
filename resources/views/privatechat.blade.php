@@ -495,10 +495,7 @@ $("#send").click(function (e) {
         });
     });
 </script>
-
-
     <script>
-
         setInterval(() => {
             $.ajaxSetup({
             headers: {
